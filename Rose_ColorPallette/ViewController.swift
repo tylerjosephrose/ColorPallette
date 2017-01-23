@@ -16,9 +16,14 @@ class ViewController: UIViewController {
 	}
 	
 	@IBOutlet weak var redSlider: UISlider!
+	let greenSlider: Float = 0
+	let blueSlider: Float = 0
+	let alphaSlider: Float = 1
 	@IBOutlet weak var colorView: UIView!
 
 	@IBAction func displayColor(_ sender: UISlider) {
+		let color = UIColor(colorLiteralRed: redSlider.value, green: greenSlider, blue: blueSlider, alpha: alphaSlider)
+		colorView.backgroundColor = color
 	}
 
 }
