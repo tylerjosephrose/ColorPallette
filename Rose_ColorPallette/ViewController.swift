@@ -32,10 +32,10 @@ class ViewController: UIViewController {
 		colorView.backgroundColor = userColor
 		
 		// Display the color values of each slider
-		redLbl.text = String.localizedStringWithFormat("%0.3f", redSlider.value)
-		greenLbl.text = String.localizedStringWithFormat("%0.3f", greenSlider.value)
-		blueLbl.text = String.localizedStringWithFormat("%0.3f", blueSlider.value)
-		alphaLbl.text = String.localizedStringWithFormat("%0.3f", alphaSlider.value)
+		redLbl.text = String.localizedStringWithFormat("%0.0f", redSlider.value * 255)
+		greenLbl.text = String.localizedStringWithFormat("%0.0f", greenSlider.value * 255)
+		blueLbl.text = String.localizedStringWithFormat("%0.0f", blueSlider.value * 255)
+		alphaLbl.text = String.localizedStringWithFormat("%0.0f %%", alphaSlider.value * 100)
 	}
 
 }
