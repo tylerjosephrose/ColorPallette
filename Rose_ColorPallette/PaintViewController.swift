@@ -20,8 +20,7 @@ class PaintViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		//Background.backgroundColor = backColor
-		canvas.backgroundColor?.withAlphaComponent(0.0)
+		canvas.backgroundColor = backColor
 		view.addSubview(canvas)
     }
 
