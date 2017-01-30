@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,11 +31,6 @@
                                     <action selector="displayColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="FpD-oG-AQc"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bm2-Cw-NW0">
-                                <rect key="frame" x="67" y="407" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bDm-gT-J0d">
                                 <rect key="frame" x="14" y="165" width="347" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +85,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6N-RP-RGl">
+                                <rect key="frame" x="267" y="337" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Eom-hT-0Bn">
+                                <rect key="frame" x="14" y="366" width="347" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="displayColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="YYd-kB-Eb9"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bm2-Cw-NW0">
+                                <rect key="frame" x="67" y="449" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -116,6 +131,8 @@
                         <outlet property="greenSlider" destination="bDm-gT-J0d" id="4Un-Pk-6rr"/>
                         <outlet property="redLbl" destination="AgS-gM-3AI" id="dkX-MQ-3z5"/>
                         <outlet property="redSlider" destination="Tpb-CP-n21" id="eYj-DS-wUq"/>
+                        <outlet property="sizeLbl" destination="D6N-RP-RGl" id="RDw-Hs-p37"/>
+                        <outlet property="sizeSlider" destination="Eom-hT-0Bn" id="hoW-47-udx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,11 +166,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LN7-wf-cKW">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="c6s-Se-eFc">
-                            <connections>
-                                <action selector="saveImage:" destination="evk-3C-zdD" id="zYG-oE-bab"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" id="c6s-Se-eFc">
+                                <connections>
+                                    <action selector="saveImage:" destination="evk-3C-zdD" id="zYG-oE-bab"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Clear" id="UuJ-6d-nQO">
+                                <connections>
+                                    <action selector="clearCanvas:" destination="evk-3C-zdD" id="702-lt-6PP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="Background" destination="siV-c9-epE" id="0ZX-gd-BMP"/>

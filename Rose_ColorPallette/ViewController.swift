@@ -26,11 +26,13 @@ class ViewController: UIViewController {
 	@IBOutlet weak var greenLbl: UILabel!
 	@IBOutlet weak var blueLbl: UILabel!
 	@IBOutlet weak var alphaLbl: UILabel!
+	@IBOutlet weak var sizeLbl: UILabel!
 	
 	@IBOutlet weak var redSlider: UISlider!
 	@IBOutlet weak var blueSlider: UISlider!
 	@IBOutlet weak var alphaSlider: UISlider!
 	@IBOutlet weak var greenSlider: UISlider!
+	@IBOutlet weak var sizeSlider: UISlider!
 
 	@IBOutlet weak var colorView: UIView!
 	
@@ -47,6 +49,7 @@ class ViewController: UIViewController {
 		greenLbl.text = String.localizedStringWithFormat("%0.0f", greenSlider.value * 255)
 		blueLbl.text = String.localizedStringWithFormat("%0.0f", blueSlider.value * 255)
 		alphaLbl.text = String.localizedStringWithFormat("%0.0f %%", alphaSlider.value * 100)
+		sizeLbl.text = String.localizedStringWithFormat("%0.0f pt", sizeSlider.value)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +57,7 @@ class ViewController: UIViewController {
 		destination.backColor = backColor
 		destination.paintColor = paintColor
 		destination.canvas = mainCanvas
+		destination.brushSize = sizeSlider.value
 	}
 
 }
