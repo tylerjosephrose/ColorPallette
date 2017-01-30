@@ -53,13 +53,13 @@ class PaintViewController: UIViewController {
 		UIGraphicsEndImageContext()
 	}
 	
-	@IBAction func clearCanvas(_ sender: UIBarButtonItem) {
+	/*@IBAction func clearCanvas(_ sender: UIBarButtonItem) {
 		print("clear button pressed")
 		canvas.image = nil
 		UIGraphicsBeginImageContext(canvas.frame.size)
 		canvas.image?.draw(in: canvas.frame)
 		UIGraphicsEndImageContext()
-	}
+	}*/
 
 	@IBAction func saveImage(_ sender: UIBarButtonItem) {
 		UIImageWriteToSavedPhotosAlbum(canvas.image!, nil, nil, nil)

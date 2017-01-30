@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainCanvas = UIImageView(frame: view.frame)
+		displayColor(UISlider())
 	}
 	
 	@IBAction func setBackgroundColor(_ sender: UIBarButtonItem) {
