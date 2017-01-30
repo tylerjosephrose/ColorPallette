@@ -14,13 +14,14 @@ class PaintViewController: UIViewController {
 	var paintColor: UIColor!
 	var canvas: UIImageView!
 	var path: UIBezierPath = UIBezierPath()
+	var brushSize: Float = 5
 	
 	@IBOutlet weak var Background: UIView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		//Background.backgroundColor = backColor
-		
+		canvas.backgroundColor?.withAlphaComponent(0.0)
 		view.addSubview(canvas)
     }
 
@@ -41,11 +42,27 @@ class PaintViewController: UIViewController {
 		path.addLine(to: point!)
 		// Set up the graphics context
 		UIGraphicsBeginImageContext(canvas.frame.size)
+		// Draw current image
+		canvas.image?.draw(in: canvas.frame)
+		// Set color
 		paintColor.setStroke()
-		path.lineWidth = 5
+		// Set size
+		path.lineWidth = CGFloat(brushSize)
 		path.stroke()
 		canvas.image = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
+	}
+	
+	@IBAction func clearCanvas(_ sender: UIBarButtonItem) {
+		print("clear button pressed")
+		canvas.image = nil
+		UIGraphicsBeginImageContext(canvas.frame.size)
+		canvas.image?.draw(in: canvas.frame)
+		UIGraphicsEndImageContext()
+	}
+
+	@IBAction func saveImage(_ sender: UIBarButtonItem) {
+		UIImageWriteToSavedPhotosAlbum(canvas.image!, nil, nil, nil)
 	}
 
 
