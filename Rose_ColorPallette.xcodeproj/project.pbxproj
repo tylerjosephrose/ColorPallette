@@ -12,6 +12,7 @@
 		9A43608A1E367A9100FC75B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4360881E367A9100FC75B6 /* Main.storyboard */; };
 		9A43608C1E367A9100FC75B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A43608B1E367A9100FC75B6 /* Assets.xcassets */; };
 		9A43608F1E367A9100FC75B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A43608D1E367A9100FC75B6 /* LaunchScreen.storyboard */; };
+		9AD293A41E3F8EDF001546D0 /* PaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD293A31E3F8EDF001546D0 /* PaintViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9A43608B1E367A9100FC75B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A43608E1E367A9100FC75B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A4360901E367A9100FC75B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AD293A31E3F8EDF001546D0 /* PaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				9A4360841E367A9100FC75B6 /* AppDelegate.swift */,
 				9A4360861E367A9100FC75B6 /* ViewController.swift */,
 				9A4360881E367A9100FC75B6 /* Main.storyboard */,
+				9AD293A31E3F8EDF001546D0 /* PaintViewController.swift */,
 				9A43608B1E367A9100FC75B6 /* Assets.xcassets */,
 				9A43608D1E367A9100FC75B6 /* LaunchScreen.storyboard */,
 				9A4360901E367A9100FC75B6 /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4360871E367A9100FC75B6 /* ViewController.swift in Sources */,
+				9AD293A41E3F8EDF001546D0 /* PaintViewController.swift in Sources */,
 				9A4360851E367A9100FC75B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +304,7 @@
 				9A4360951E367A9100FC75B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
