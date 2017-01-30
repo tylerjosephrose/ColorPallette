@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var greenLbl: UILabel!
 	@IBOutlet weak var blueLbl: UILabel!
 	@IBOutlet weak var alphaLbl: UILabel!
+	
 	@IBOutlet weak var redSlider: UISlider!
 	@IBOutlet weak var blueSlider: UISlider!
 	@IBOutlet weak var alphaSlider: UISlider!
