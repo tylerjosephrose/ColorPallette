@@ -96,6 +96,11 @@
                         <barButtonItem title="Item" id="emJ-ha-iF4"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="bGp-2q-78j">
+                        <barButtonItem key="leftBarButtonItem" title="Set Background Color" id="Ipr-fT-0yq">
+                            <connections>
+                                <action selector="setBackgroundColor:" destination="BYZ-38-t0r" id="A2N-xJ-gcq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Paint" id="R2s-eG-8At">
                             <connections>
                                 <segue destination="evk-3C-zdD" kind="show" id="n5D-s7-uO9"/>

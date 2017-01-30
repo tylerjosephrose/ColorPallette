@@ -12,8 +12,14 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		mainCanvas = UIImageView(frame: view.frame)
 	}
+	
+	@IBAction func setBackgroundColor(_ sender: UIBarButtonItem) {
+		backColor = UIColor(colorLiteralRed: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
+	}
+	
+	var mainCanvas: UIImageView!
 	
 	@IBOutlet weak var redLbl: UILabel!
 	@IBOutlet weak var greenLbl: UILabel!
@@ -27,12 +33,13 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var colorView: UIView!
 	
-	var userColor: UIColor!
+	var paintColor: UIColor!
+	var backColor: UIColor!
 
 	@IBAction func displayColor(_ sender: UISlider) {
 		// Set UIView background color
-		userColor = UIColor(colorLiteralRed: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
-		colorView.backgroundColor = userColor
+		paintColor = UIColor(colorLiteralRed: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
+		colorView.backgroundColor = paintColor
 		
 		// Display the color values of each slider
 		redLbl.text = String.localizedStringWithFormat("%0.0f", redSlider.value * 255)
@@ -43,7 +50,9 @@ class ViewController: UIViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let destination = segue.destination as! PaintViewController
-		destination.paintColor = userColor
+		destination.backColor = backColor
+		destination.paintColor = paintColor
+		destination.canvas = mainCanvas
 	}
 
 }
