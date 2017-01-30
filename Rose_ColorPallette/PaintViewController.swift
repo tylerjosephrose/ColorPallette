@@ -12,9 +12,12 @@ class PaintViewController: UIViewController {
 
 	var paintColor: UIColor!
 	
+	@IBOutlet weak var Background: UIView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = paintColor
+		Background.backgroundColor = paintColor
+		
         // Do any additional setup after loading the view.
     }
 

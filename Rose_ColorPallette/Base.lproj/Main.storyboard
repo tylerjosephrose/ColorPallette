@@ -130,12 +130,27 @@
                     <view key="view" contentMode="scaleToFill" id="Knq-28-Pc6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siV-c9-epE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="siV-c9-epE" secondAttribute="bottom" id="RKF-Sk-WDs"/>
+                            <constraint firstAttribute="trailing" secondItem="siV-c9-epE" secondAttribute="trailing" id="Txe-og-n6a"/>
+                            <constraint firstItem="siV-c9-epE" firstAttribute="leading" secondItem="Knq-28-Pc6" secondAttribute="leading" id="gOY-mN-SIs"/>
+                            <constraint firstItem="siV-c9-epE" firstAttribute="top" secondItem="Knq-28-Pc6" secondAttribute="top" id="gRq-Q2-Jem"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Background" destination="siV-c9-epE" id="0ZX-gd-BMP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8a-K5-IeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="137"/>
+            <point key="canvasLocation" x="1848.8" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fhE-rw-19o">
