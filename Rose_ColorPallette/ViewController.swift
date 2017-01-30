@@ -26,10 +26,12 @@ class ViewController: UIViewController {
 	@IBOutlet weak var greenSlider: UISlider!
 
 	@IBOutlet weak var colorView: UIView!
+	
+	var userColor: UIColor!
 
 	@IBAction func displayColor(_ sender: UISlider) {
 		// Set UIView background color
-		let userColor = UIColor(colorLiteralRed: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
+		userColor = UIColor(colorLiteralRed: redSlider.value, green: greenSlider.value, blue: blueSlider.value, alpha: alphaSlider.value)
 		colorView.backgroundColor = userColor
 		
 		// Display the color values of each slider
@@ -37,6 +39,11 @@ class ViewController: UIViewController {
 		greenLbl.text = String.localizedStringWithFormat("%0.0f", greenSlider.value * 255)
 		blueLbl.text = String.localizedStringWithFormat("%0.0f", blueSlider.value * 255)
 		alphaLbl.text = String.localizedStringWithFormat("%0.0f %%", alphaSlider.value * 100)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let destination = segue.destination as! PaintViewController
+		destination.paintColor = userColor
 	}
 
 }
